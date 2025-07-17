@@ -1,8 +1,5 @@
 {
   "build": {
-    "dockerfilePath": "docker-compose.yml"
-  },
-  "deploy": {
-    "startCommand": "docker-compose up"
+    "builder": "COMPOSE"
   }
 }
