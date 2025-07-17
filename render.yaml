@@ -5,5 +5,4 @@ services:
     plan: free
     repo: https://github.com/vieirasp/n8n-whatsapp-ia
     branch: main
-    dockerContext: .
-    dockerfilePath: ./docker-compose.yml
+    dockerCommand: docker-compose up
