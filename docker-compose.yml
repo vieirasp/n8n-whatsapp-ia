@@ -20,8 +20,6 @@ services:
       POSTGRES_DB: default
     ports:
       - "5432:5432"
-    volumes:
-      - pgdata:/var/lib/postgresql/data
 
   waha:
     image: devlikeapro/waha:latest
@@ -30,9 +28,6 @@ services:
       WHATSAPP_HOOK_URL: http://host.docker.internal:5678/webhook/webhook
       WHATSAPP_DEFAULT_ENGINE: GOWS
       WHATSAPP_HOOK_EVENTS: message
-    volumes:
-      - waha_sessions:/app/.sessions
-      - waha_media:/app/.media
     ports:
       - "3000:3000"
 
@@ -45,13 +40,5 @@ services:
       GENERIC_TIMEZONE: America/Sao_Paulo
       N8N_LOG_LEVEL: debug
       N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE: true
-    volumes:
-      - n8n_data:/home/node/.n8n
     ports:
       - "5678:5678"
-
-volumes:
-  pgdata:
-  waha_sessions:
-  waha_media:
-  n8n_data:
