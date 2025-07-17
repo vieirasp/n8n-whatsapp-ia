@@ -5,4 +5,5 @@ ENV N8N_LOG_LEVEL=debug
 
 EXPOSE 5678
 
-CMD ["n8n", "--tunnel"]
+ENTRYPOINT ["tini", "--"]
+CMD ["n8n", "start", "--tunnel"]
