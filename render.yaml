@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: n8n-whatsapp
+    env: docker
+    plan: free
+    repo: https://github.com/vieirasp/n8n-whatsapp-ia
+    branch: main
+    dockerContext: .
+    dockerfilePath: ./docker-compose.yml
